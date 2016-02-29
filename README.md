@@ -1,4 +1,5 @@
 # Chirrup
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 Chirrup is a value validator for Swift.
 
@@ -82,3 +83,9 @@ let error = chirrup.validate(fieldName, value: val,
               with: ValidationRule(.Lower(than: "10000.00"), on: { !val.isEmpty }))
 ```
 Above validation is skipped.
+
+Installation
+-
+Add Chirrup to your Cartfile:
+
+`github "bilogub/Chirrup"`
