@@ -14,14 +14,14 @@ Chirrup is a value validator for Swift.
 
 Usage
 -
-![ChirrupDemo](ChirrupDemo.gif)
+<img src="https://raw.githubusercontent.com/bilogub/Chirrup/master/ChirrupDemo.gif" width="359" />
 
 First create the Chirrup instance
 
 ```swift
 let chirrup = Chirrup()
 ```
-Then the following metahods are available for use:
+Then the following methods are available for use:
 ```swift
 public func validate(fieldName: String, value: String, with rules: [ValidationRule], _ callback: validationCallback? = nil) -> [ValidationRule]
 ```
