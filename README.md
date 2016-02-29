@@ -1,4 +1,6 @@
 # Chirrup
+[![Build Status](https://travis-ci.org/bilogub/Chirrup.svg?branch=master)](https://travis-ci.org/bilogub/Chirrup)
+[![codecov.io](https://codecov.io/github/bilogub/Chirrup/coverage.svg?branch=master)](https://codecov.io/github/bilogub/Chirrup?branch=master)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 Chirrup is a value validator for Swift.
