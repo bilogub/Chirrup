@@ -26,7 +26,8 @@ let chirrup = Chirrup()
 ```
 Then the following methods are available for use:
 ```swift
-public func validate(fieldName: String, value: String, with rules: [ValidationRule], _ callback: validationCallback? = nil) -> [ValidationRule]
+public func validate(fieldName: String, value: String, with rules: [ValidationRule],
+      _ callback: validationCallback? = nil) -> [ValidationRule]
 ```
 ```swift
 public func validate(fieldName: String, value: String, with rule: ValidationRule,
@@ -35,7 +36,7 @@ public func validate(fieldName: String, value: String, with rule: ValidationRule
 - `fieldName: String` is passed to `callback` if such is provided as the last argument
 - `value` to be validated
 - `rules` [validation types](#validationType) to validate value with
-- and optional `callback` which runs no matter what if passed as an argument. It gets the `errors` array and the field name(`field` below) or just one error - it depends on callback type:
+- and optional `callback` which runs no matter what if passed as an argument. It gets the `errors` array and the field name(`field` below in Examples section) or just one error - it depends on callback type:
 ```swift
   public typealias validationCallback       = (errors: [ValidationRule],  fieldName: String) -> ()
   public typealias validationCallbackSingle = (error:  ValidationRule?,   fieldName: String) -> ()
@@ -47,9 +48,9 @@ chirrup.validate("Search field", value: sender.text!,
       with: [ValidationRule(.NonEmpty),
              ValidationRule(.Contains(value: "UberCar"))]) { errors, field in
         let errorMessages = self.chirrup.formatMessagesFor(field, from: errors)
+        // errorMessages == "Search field should not be empty\nSearch field should contain `UberCar`"
         self.errorLabelSearchField.text = errorMessages
 }
-// errorMessages == "Search field should not be empty\nSearch field should contain `UberCar`"
 ```
 or instead of closure callback one can use `errors` returned by `validate` method
 ```swift
@@ -65,7 +66,7 @@ let error = chirrup.validate("Activator", value: false,
     with: ValidationRule(.IsTrue))
 
 expect(error!.errorMessageFor(fieldName))
-    .to(equal("Activate should be true"))
+    .to(equal("Activator should be true"))
 ```
 
 ### `validate` return value
