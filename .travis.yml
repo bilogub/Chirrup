@@ -1,0 +1,20 @@
+branches:
+  only:
+    - master
+
+language: objective-c
+xcode_project: Chirrup.xcodeproj
+xcode_scheme: Chirrup
+osx_image: xcode7.2
+
+before_install:
+  - brew update
+  - brew upgrade xctool
+  - brew install carthage
+  - carthage bootstrap --verbose
+
+script:
+- xcodebuild -project Chirrup.xcodeproj -scheme Chirrup -destination 'platform=iOS Simulator,name=iPhone 6' clean test
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
