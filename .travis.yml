@@ -11,7 +11,7 @@ before_install:
   - brew update
   - brew upgrade xctool
   # - brew install carthage
-  - carthage bootstrap --verbose
+  - carthage bootstrap --platform iOS
 
 script:
 - xcodebuild -project Chirrup.xcodeproj -scheme Chirrup -destination 'platform=iOS Simulator,name=iPhone 6' clean test
